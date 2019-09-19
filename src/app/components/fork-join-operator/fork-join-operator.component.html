@@ -1,0 +1,36 @@
+<h1>ForkJoin</h1>
+<div class="row">
+  <div class="col">
+    <button (click)="nextOn(subject1, 0)">Next</button>
+    <button (click)="completeOn(subject1)">Complete</button>
+    <p *ngIf="lastGeneratedValues[0]">
+      value created: {{ lastGeneratedValues[0] }}
+    </p>
+    <app-show-observable
+      title="Observable from subject 1"
+      color="red"
+      [observableInput]="subject1?.asObservable()"
+    ></app-show-observable>
+  </div>
+
+  <div class="col">
+    <button (click)="nextOn(subject2, 1)">Next</button>
+    <button (click)="completeOn(subject2)">Complete</button>
+    <p *ngIf="lastGeneratedValues[1]">
+      value created: {{ lastGeneratedValues[1] }}
+    </p>
+    <app-show-observable
+      title="Observable from subject 2"
+      color="green"
+      [observableInput]="subject2?.asObservable()"
+    ></app-show-observable>
+  </div>
+
+  <div class="col">
+    <app-show-observable
+      title="New Observable"
+      color="green"
+      [observableInput]="newObservable$"
+    ></app-show-observable>
+  </div>
+</div>

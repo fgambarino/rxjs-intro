@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col">
+    <ul>
+      <li *ngFor="let o of operatorPages">
+        <a [routerLink]="['./' + o.url]">{{ o.name }}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-10">
+    <router-outlet></router-outlet>
+  </div>
+</div>

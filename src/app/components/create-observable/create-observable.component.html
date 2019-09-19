@@ -1,0 +1,38 @@
+<h1>Creating Observables</h1>
+<div class="row">
+  <div class="col">
+    <app-show-observable
+      title="Using of operator"
+      color="red"
+      [observableInput]="ofObservable$"
+    ></app-show-observable>
+  </div>
+  <div class="col">
+    <app-show-observable
+      title="From http call"
+      color="green"
+      [observableInput]="httpObservable$"
+    ></app-show-observable>
+  </div>
+  <div class="col">
+    <app-show-observable
+      title="From events, e.g. click"
+      color="blue"
+      [observableInput]="clickObservable$"
+    ></app-show-observable>
+  </div>
+  <div class="col">
+    <app-show-observable
+      title="Using interval operator"
+      color="grey"
+      [observableInput]="intervalObservable$"
+    ></app-show-observable>
+  </div>
+  <div class="col">
+    <app-show-observable
+      title="Using timer operator"
+      color="orange"
+      [observableInput]="timerObservable$"
+    ></app-show-observable>
+  </div>
+</div>
