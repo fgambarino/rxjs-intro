@@ -18,7 +18,7 @@ export class CreateObservableComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.ofObservable$ = of(1, 2, 3, 4, [1, 2, 3], 'ciao mamma').pipe(
+    this.ofObservable$ = of(1, 2, 3, 4, [1, 2, 3], `Hey mom, look I'm on TV`).pipe(
       delay(2000)
     );
 
@@ -30,7 +30,7 @@ export class CreateObservableComponent implements OnInit {
       map(response =>
         JSON.stringify(response)
           .split(',')
-          .join(' ')
+          .join(', ')
       )
     );
 
