@@ -20,6 +20,8 @@ import { CombineLatestOperatorComponent } from './components/combine-latest-oper
 import { ZipOperatorComponent } from './components/zip-operator/zip-operator.component';
 import { RaceOperatorComponent } from './components/race-operator/race-operator.component';
 import { ForkJoinOperatorComponent } from './components/fork-join-operator/fork-join-operator.component';
+import { HomeComponent } from './components/home/home.component';
+import { CatchErrorOperatorComponent } from './components/catch-error-operator/catch-error-operator.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { ForkJoinOperatorComponent } from './components/fork-join-operator/fork-
     CombineLatestOperatorComponent,
     ZipOperatorComponent,
     RaceOperatorComponent,
-    ForkJoinOperatorComponent
+    ForkJoinOperatorComponent,
+    HomeComponent,
+    CatchErrorOperatorComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

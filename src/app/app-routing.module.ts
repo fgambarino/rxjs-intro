@@ -1,3 +1,5 @@
+import { CatchErrorOperatorComponent } from './components/catch-error-operator/catch-error-operator.component';
+import { HomeComponent } from './components/home/home.component';
 import { FirstOperatorComponent } from './components/first-operator/first-operator.component';
 import { FilterOperatorComponent } from './components/filter-operator/filter-operator.component';
 import { ForkJoinOperatorComponent } from './components/fork-join-operator/fork-join-operator.component';
@@ -18,7 +20,8 @@ import { SkipOperatorComponent } from './components/skip-operator/skip-operator.
 import { RaceOperatorComponent } from './components/race-operator/race-operator.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'create-observables', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
   { path: 'create-observables', component: CreateObservableComponent },
   { path: 'subjects', component: SubjectsComponent },
   {
@@ -41,7 +44,8 @@ const routes: Routes = [
       { path: 'race-operator', component: RaceOperatorComponent },
       { path: 'fork-join-operator', component: ForkJoinOperatorComponent },
       { path: 'filter-operator', component: FilterOperatorComponent },
-      { path: 'first-operator', component: FirstOperatorComponent }
+      { path: 'first-operator', component: FirstOperatorComponent },
+      { path: 'catch-error-operator', component: CatchErrorOperatorComponent }
     ]
   }
 ];

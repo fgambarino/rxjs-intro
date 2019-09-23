@@ -1,0 +1,22 @@
+<h1>CatchError and Error Management</h1>
+<div class="row">
+  <div class="col">
+    <app-show-observable
+      title="Source observable"
+      color="red"
+      [observableInput]="sourceObservable$"
+    ></app-show-observable>
+  </div>
+  <div class="col">
+    <app-show-observable
+      title="New Observable"
+      color="green"
+      [observableInput]="newObservable$"
+    ></app-show-observable>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <p *ngFor="let o of output">{{ o }}</p>
+  </div>
+</div>
