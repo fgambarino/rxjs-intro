@@ -1,3 +1,4 @@
+import { TapOperatorComponent } from './components/tap-operator/tap-operator.component';
 import { CatchErrorOperatorComponent } from './components/catch-error-operator/catch-error-operator.component';
 import { HomeComponent } from './components/home/home.component';
 import { FirstOperatorComponent } from './components/first-operator/first-operator.component';
@@ -28,12 +29,16 @@ const routes: Routes = [
     path: 'observable-operators',
     component: ObservableOperatorsComponent,
     children: [
-      { path: '', redirectTo: 'map', pathMatch: 'full' },
-      { path: 'map', component: MapOperatorComponent },
-      { path: 'delay', component: DelayOperatorComponent },
-      { path: 'debounce-time', component: DebounceTimeOperatorComponent },
-      { path: 'switch-map', component: SwitchMapOperatorComponent },
-      { path: 'merge-map', component: MergeMapOperatorComponent },
+      { path: '', redirectTo: 'tap-operator', pathMatch: 'full' },
+      { path: 'tap-operator', component: TapOperatorComponent },
+      { path: 'map-operator', component: MapOperatorComponent },
+      { path: 'delay-operator', component: DelayOperatorComponent },
+      {
+        path: 'debounce-time-operator',
+        component: DebounceTimeOperatorComponent
+      },
+      { path: 'switch-map-operator', component: SwitchMapOperatorComponent },
+      { path: 'merge-map-operator', component: MergeMapOperatorComponent },
       { path: 'take-operator', component: TakeOperatorComponent },
       { path: 'skip-operator', component: SkipOperatorComponent },
       {

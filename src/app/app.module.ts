@@ -22,6 +22,7 @@ import { RaceOperatorComponent } from './components/race-operator/race-operator.
 import { ForkJoinOperatorComponent } from './components/fork-join-operator/fork-join-operator.component';
 import { HomeComponent } from './components/home/home.component';
 import { CatchErrorOperatorComponent } from './components/catch-error-operator/catch-error-operator.component';
+import { TapOperatorComponent } from './components/tap-operator/tap-operator.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { CatchErrorOperatorComponent } from './components/catch-error-operator/c
     RaceOperatorComponent,
     ForkJoinOperatorComponent,
     HomeComponent,
-    CatchErrorOperatorComponent
+    CatchErrorOperatorComponent,
+    TapOperatorComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

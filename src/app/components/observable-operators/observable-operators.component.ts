@@ -7,15 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ObservableOperatorsComponent implements OnInit {
   operatorPages = [
-    { url: 'map', name: 'Map operator' },
-    { url: 'delay', name: 'Delay operator' },
+    { url: 'tap-operator', name: 'Tap operator' },
+    { url: 'map-operator', name: 'Map operator' },
+    { url: 'delay-operator', name: 'Delay operator' },
     { url: 'take-operator', name: 'Take operator' },
     { url: 'skip-operator', name: 'Skip operator' },
-    { url: 'debounce-time', name: 'DebounceTime operator️' },
+    { url: 'debounce-time-operator', name: 'DebounceTime operator️' },
     { url: 'filter-operator', name: 'Filter operator' },
     { url: 'first-operator', name: 'First operator️' },
-    { url: 'switch-map', name: 'SwitchMap operator' },
-    { url: 'merge-map', name: 'MergeMap operator' },
+    { url: 'switch-map-operator', name: 'SwitchMap operator' },
+    { url: 'merge-map-operator', name: 'MergeMap operator' },
     { url: 'combine-latest-operator', name: 'CombineLatest operator' },
     { url: 'zip-operator', name: 'Zip operator' },
     { url: 'race-operator', name: 'Race operator' },
