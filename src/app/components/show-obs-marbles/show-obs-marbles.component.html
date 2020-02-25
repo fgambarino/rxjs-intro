@@ -1,0 +1,4 @@
+<p *ngIf="!events.length; else eventsTemplate">Waiting for first value</p>
+<ng-template #eventsTemplate>
+  <span *ngFor="let i of events">{{ i }}</span>
+</ng-template>

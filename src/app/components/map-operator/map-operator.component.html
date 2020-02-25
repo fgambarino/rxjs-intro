@@ -1,6 +1,20 @@
 <h1>Map</h1>
 <div class="row">
   <div class="col">
+    <app-show-obs-marbles
+      [observableInput]="sourceObservable$"
+    ></app-show-obs-marbles>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <app-show-obs-marbles
+      [observableInput]="newObservable$"
+    ></app-show-obs-marbles>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
     <app-show-observable
       title="Source observable"
       color="red"
