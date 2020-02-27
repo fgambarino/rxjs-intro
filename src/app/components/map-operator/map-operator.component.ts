@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, interval } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-map-operator',
@@ -14,7 +14,7 @@ export class MapOperatorComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.sourceObservable$ = interval(2000);
+    this.sourceObservable$ = interval(2000).pipe(take(2));
     this.newObservable$ = this.sourceObservable$.pipe(map(i => i ** 2));
   }
 }
