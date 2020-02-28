@@ -11,10 +11,16 @@ export class MapOperatorComponent implements OnInit {
   sourceObservable$: Observable<any>;
   newObservable$: Observable<any>;
 
+  showMarbleDiagram = true;
+
   constructor() {}
 
   ngOnInit() {
-    this.sourceObservable$ = interval(2000).pipe(take(2));
+    this.sourceObservable$ = interval(2000).pipe(take(6));
     this.newObservable$ = this.sourceObservable$.pipe(map(i => i ** 2));
+  }
+
+  changeView() {
+    this.showMarbleDiagram = !this.showMarbleDiagram;
   }
 }

@@ -1,4 +1,16 @@
-<p *ngIf="!events.length; else eventsTemplate">Waiting for first value</p>
-<ng-template #eventsTemplate>
-  <span *ngFor="let i of events">{{ i }}</span>
-</ng-template>
+<div>
+  <h2 [style.color]="color">{{ title }}</h2>
+  <p *ngIf="!events.length; else eventsTemplate">Waiting for first value</p>
+  <ng-template #eventsTemplate>
+    <ng-container *ngFor="let i of events"
+      ><ng-container *ngIf="i === waitingContent; else content"
+        ><span>-</span></ng-container
+      ><ng-template #content
+        ><div class="marble" [style.backgroundColor]="color ? color : 'black'">
+          {{ i }}
+        </div></ng-template
+      ></ng-container
+    >
+    <span *ngIf="completed">-|</span>
+  </ng-template>
+</div>

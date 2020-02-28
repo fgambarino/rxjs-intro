@@ -1,13 +1,6 @@
-import { switchMap, tap, takeUntil, take } from 'rxjs/operators';
+import { switchMap, tap, takeUntil } from 'rxjs/operators';
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
-import {
-  Observable,
-  Subscription,
-  interval,
-  concat,
-  Subject,
-  fromEvent
-} from 'rxjs';
+import { Observable, Subscription, interval, EMPTY } from 'rxjs';
 
 @Component({
   selector: 'app-show-obs-marbles',
@@ -21,9 +14,8 @@ export class ShowObsMarblesComponent implements OnInit, OnDestroy {
   @Input() observableInput: Observable<any>;
   @Input() color: string;
 
-  completed$ = new Subject<boolean>();
-
   subscription: Subscription;
+  waitingContent = '-';
   constructor() {
     this.subscription = new Subscription();
   }
@@ -33,10 +25,7 @@ export class ShowObsMarblesComponent implements OnInit, OnDestroy {
       this.subscription.add(
         this.observableInput.subscribe({
           complete: () => {
-            console.log('completed');
             this.completed = true;
-            this.completed$.next(true);
-            this.completed$.complete();
           }
         })
       );
@@ -44,7 +33,7 @@ export class ShowObsMarblesComponent implements OnInit, OnDestroy {
         interval(200)
           .pipe(
             takeUntil(this.observableInput),
-            tap(() => this.events.push('.'))
+            tap(() => this.events.push(this.waitingContent))
           )
           .subscribe()
       );
@@ -53,10 +42,11 @@ export class ShowObsMarblesComponent implements OnInit, OnDestroy {
           .pipe(
             switchMap((x: any) => {
               this.events.push(x);
-              return interval(200).pipe(
-                take(15),
-                tap(() => this.events.push('.'))
-              );
+              return this.completed
+                ? EMPTY
+                : interval(200).pipe(
+                    tap(() => this.events.push(this.waitingContent))
+                  );
             })
           )
           .subscribe()
@@ -66,6 +56,5 @@ export class ShowObsMarblesComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
-    this.completed$.unsubscribe();
   }
 }
