@@ -54,6 +54,10 @@ export class ShowObsMarblesComponent implements OnInit, OnDestroy {
     }
   }
 
+  IsArray(obj: any) {
+    return Array.isArray(obj);
+  }
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }

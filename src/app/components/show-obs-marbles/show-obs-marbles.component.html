@@ -6,9 +6,18 @@
       ><ng-container *ngIf="i === waitingContent; else content"
         ><span>-</span></ng-container
       ><ng-template #content
-        ><div class="marble" [style.backgroundColor]="color ? color : 'black'">
+        ><div
+          class="marble"
+          [style.backgroundColor]="color ? color : 'black'"
+          *ngIf="!IsArray(i)"
+        >
           {{ i }}
-        </div></ng-template
+        </div>
+        <ng-container *ngIf="IsArray(i)">
+          <div class="marble" [style.backgroundColor]="color ? color : 'black'">
+            <p *ngFor="let nestedItem of i">{{ nestedItem }}</p>
+          </div></ng-container
+        ></ng-template
       ></ng-container
     >
     <span *ngIf="completed">-|</span>
