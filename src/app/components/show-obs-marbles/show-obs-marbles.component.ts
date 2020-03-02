@@ -1,4 +1,4 @@
-import { switchMap, tap, takeUntil } from 'rxjs/operators';
+import { switchMap, tap, takeUntil, catchError } from 'rxjs/operators';
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Observable, Subscription, interval, EMPTY } from 'rxjs';
 
@@ -47,6 +47,10 @@ export class ShowObsMarblesComponent implements OnInit, OnDestroy {
                 : interval(200).pipe(
                     tap(() => this.events.push(this.waitingContent))
                   );
+            }),
+            catchError(() => {
+              this.events.push('X');
+              return EMPTY;
             })
           )
           .subscribe()
