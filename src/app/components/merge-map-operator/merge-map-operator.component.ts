@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, interval, of } from 'rxjs';
-import { map, mergeMap } from 'rxjs/operators';
+import { Observable, interval } from 'rxjs';
+import { map, mergeMap, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-merge-map-operator',
@@ -15,13 +15,17 @@ export class MergeMapOperatorComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.sourceObservable$ = of(1, 2, 3, 4, 5);
-    this.sourceObservable2$ = interval(3000);
+    this.sourceObservable$ = interval(1500).pipe(
+      take(3),
+      map(i => i + 10)
+    );
+    this.sourceObservable2$ = interval(2000).pipe(
+      take(3),
+      map(i => i + 1)
+    );
     this.newObservable$ = this.sourceObservable$.pipe(
-      mergeMap(value =>
-        this.sourceObservable2$.pipe(
-          map(value2 => `${value}(obs) ${value2}(inner obs)`)
-        )
+      mergeMap(outer =>
+        this.sourceObservable2$.pipe(map(inner => inner * outer))
       )
     );
   }

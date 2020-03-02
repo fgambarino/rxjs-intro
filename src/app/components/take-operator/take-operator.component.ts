@@ -14,7 +14,7 @@ export class TakeOperatorComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.sourceObservable$ = interval(2000);
-    this.newObservable$ = this.sourceObservable$.pipe(take(5));
+    this.sourceObservable$ = interval(2000).pipe(take(5));
+    this.newObservable$ = this.sourceObservable$.pipe(take(3));
   }
 }

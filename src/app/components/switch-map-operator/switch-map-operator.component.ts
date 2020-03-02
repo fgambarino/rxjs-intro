@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, interval } from 'rxjs';
-import { switchMap, map } from 'rxjs/operators';
+import { switchMap, map, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-switch-map-operator',
@@ -15,12 +15,15 @@ export class SwitchMapOperatorComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.sourceObservable$ = interval(8000).pipe(map(x => `${x}(observable)`));
-    this.sourceObservable2$ = interval(2000).pipe(
-      map(x => `${x}(inner observable)`)
+    this.sourceObservable$ = interval(1500).pipe(
+      take(4),
+      map(i => i + 10)
     );
+    this.sourceObservable2$ = interval(500).pipe(take(5));
     this.newObservable$ = this.sourceObservable$.pipe(
-      switchMap(_ => this.sourceObservable2$)
+      switchMap(outer =>
+        this.sourceObservable2$.pipe(map(inner => outer + inner))
+      )
     );
   }
 }

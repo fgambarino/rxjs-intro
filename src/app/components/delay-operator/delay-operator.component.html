@@ -1,38 +1,19 @@
 <h1>Delay</h1>
-<app-change-view-button
-  [showMarbleDiagram]="showMarbleDiagram"
-  (clicked)="changeView()"
-></app-change-view-button>
-<ng-container *ngIf="showMarbleDiagram; else stdDiagram">
-  <div class="row">
-    <div class="col">
-      <app-show-obs-marbles
-        [observableInput]="sourceObservable$"
-      ></app-show-obs-marbles>
-    </div>
+<div class="row">
+  <div class="col">
+    <app-show-obs-marbles
+      title="Source Observable"
+      color="red"
+      [observableInput]="sourceObservable$"
+    ></app-show-obs-marbles>
   </div>
-  <div class="row">
-    <div class="col">
-      <app-show-obs-marbles
-        [observableInput]="newObservable$"
-      ></app-show-obs-marbles>
-    </div></div
-></ng-container>
-<ng-template #stdDiagram>
-  <div class="row">
-    <div class="col">
-      <app-show-observable
-        title="Source observable"
-        color="red"
-        [observableInput]="sourceObservable$"
-      ></app-show-observable>
-    </div>
-    <div class="col">
-      <app-show-observable
-        title="New Observable"
-        color="green"
-        [observableInput]="newObservable$"
-      ></app-show-observable>
-    </div>
+</div>
+<div class="row">
+  <div class="col">
+    <app-show-obs-marbles
+      title="Delayed by 1 second Observable"
+      color="green"
+      [observableInput]="newObservable$"
+    ></app-show-obs-marbles>
   </div>
-</ng-template>
+</div>

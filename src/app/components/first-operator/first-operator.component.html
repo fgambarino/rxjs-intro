@@ -1,17 +1,19 @@
 <h1>First</h1>
 <div class="row">
   <div class="col">
-    <app-show-observable
+    <app-show-obs-marbles
       title="Source observable"
       color="red"
       [observableInput]="sourceObservable$"
-    ></app-show-observable>
+    ></app-show-obs-marbles>
   </div>
+</div>
+<div class="row">
   <div class="col">
-    <app-show-observable
-      title="New Observable"
+    <app-show-obs-marbles
+      title="First value greater than 2 Observable"
       color="green"
       [observableInput]="newObservable$"
-    ></app-show-observable>
+    ></app-show-obs-marbles>
   </div>
 </div>

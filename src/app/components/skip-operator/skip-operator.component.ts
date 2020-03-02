@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, interval } from 'rxjs';
-import { skip } from 'rxjs/operators';
+import { skip, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-skip-operator',
@@ -14,7 +14,7 @@ export class SkipOperatorComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.sourceObservable$ = interval(2000);
-    this.newObservable$ = this.sourceObservable$.pipe(skip(5));
+    this.sourceObservable$ = interval(2000).pipe(take(5));
+    this.newObservable$ = this.sourceObservable$.pipe(skip(2));
   }
 }

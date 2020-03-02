@@ -1,47 +1,19 @@
+<h1>Map</h1>
 <div class="row">
   <div class="col">
-    <h1>Map</h1>
-    <app-change-view-button
-      class="float-right"
-      [showMarbleDiagram]="showMarbleDiagram"
-      (clicked)="changeView()"
-    ></app-change-view-button>
+    <app-show-obs-marbles
+      title="Source observable"
+      color="red"
+      [observableInput]="sourceObservable$"
+    ></app-show-obs-marbles>
   </div>
 </div>
-<ng-container *ngIf="showMarbleDiagram; else stdDiagram">
-  <div class="row">
-    <div class="col">
-      <app-show-obs-marbles
-        title="Source observable"
-        color="red"
-        [observableInput]="sourceObservable$"
-      ></app-show-obs-marbles>
-    </div>
+<div class="row">
+  <div class="col">
+    <app-show-obs-marbles
+      title="Map Observable  i => i*i "
+      color="green"
+      [observableInput]="newObservable$"
+    ></app-show-obs-marbles>
   </div>
-  <div class="row">
-    <div class="col">
-      <app-show-obs-marbles
-        title="New Observable ( i => i*i )"
-        color="green"
-        [observableInput]="newObservable$"
-      ></app-show-obs-marbles>
-    </div></div
-></ng-container>
-<ng-template #stdDiagram>
-  <div class="row">
-    <div class="col">
-      <app-show-observable
-        title="Source observable"
-        color="red"
-        [observableInput]="sourceObservable$"
-      ></app-show-observable>
-    </div>
-    <div class="col">
-      <app-show-observable
-        title="New Observable"
-        color="green"
-        [observableInput]="newObservable$"
-      ></app-show-observable>
-    </div>
-  </div>
-</ng-template>
+</div>

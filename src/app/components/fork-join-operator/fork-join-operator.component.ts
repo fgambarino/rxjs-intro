@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { forkJoin, Subject, Observable } from 'rxjs';
+import { forkJoin, Subject, Observable, interval, race } from 'rxjs';
+import { map, take, delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-fork-join-operator',
@@ -7,26 +8,25 @@ import { forkJoin, Subject, Observable } from 'rxjs';
   styleUrls: ['./fork-join-operator.component.scss']
 })
 export class ForkJoinOperatorComponent implements OnInit {
-  subject1: Subject<any>;
-  subject2: Subject<any>;
   newObservable$: Observable<any>;
+  sourceObservable$: any;
+  sourceObservable2$: any;
 
-  lastGeneratedValues = { 0: '', 1: '' };
   constructor() {}
 
   ngOnInit() {
-    this.subject1 = new Subject();
-    this.subject2 = new Subject();
-    this.newObservable$ = forkJoin([this.subject1, this.subject2]);
-  }
+    this.sourceObservable$ = interval(2000).pipe(
+      map(x => x),
+      take(3)
+    );
+    this.sourceObservable2$ = interval(1000).pipe(
+      map(x => 10 + x),
+      take(3)
+    );
 
-  nextOn(subject: Subject<any>, key: number) {
-    const value = Math.trunc(Math.random() * 1000);
-    this.lastGeneratedValues = { ...this.lastGeneratedValues, [key]: value };
-    subject.next(value);
-  }
-
-  completeOn(subject: Subject<any>) {
-    subject.complete();
+    this.newObservable$ = forkJoin([
+      this.sourceObservable$,
+      this.sourceObservable2$
+    ]);
   }
 }

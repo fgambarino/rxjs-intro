@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, interval, race } from 'rxjs';
-import { map, take } from 'rxjs/operators';
+import { map, take, delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-race-operator',
@@ -19,7 +19,8 @@ export class RaceOperatorComponent implements OnInit {
       map(x => x),
       take(5)
     );
-    this.sourceObservable2$ = interval(3000).pipe(
+    this.sourceObservable2$ = interval(1000).pipe(
+      delay(1500),
       map(x => 10 + x),
       take(5)
     );

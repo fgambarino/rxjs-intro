@@ -27,8 +27,4 @@ export class ZipOperatorComponent implements OnInit {
     );
     this.newObservable$ = zip(this.sourceObservable$, this.sourceObservable2$);
   }
-
-  changeView() {
-    this.showMarbleDiagram = !this.showMarbleDiagram;
-  }
 }

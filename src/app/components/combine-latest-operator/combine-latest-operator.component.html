@@ -1,24 +1,28 @@
 <h1>CombineLatest</h1>
 <div class="row">
   <div class="col">
-    <app-show-observable
-      title="1st Observable"
+    <app-show-obs-marbles
+      title="Source one"
       color="red"
       [observableInput]="sourceObservable$"
-    ></app-show-observable>
+    ></app-show-obs-marbles>
   </div>
+</div>
+<div class="row">
   <div class="col">
-    <app-show-observable
-      title="2nd Observable"
+    <app-show-obs-marbles
+      title="Source two"
       color="green"
       [observableInput]="sourceObservable2$"
-    ></app-show-observable>
+    ></app-show-obs-marbles>
   </div>
+</div>
+<div class="row">
   <div class="col">
-    <app-show-observable
-      title="New Observable"
+    <app-show-obs-marbles
+      title="Combine Latest Observable"
       color="blue"
       [observableInput]="newObservable$"
-    ></app-show-observable>
+    ></app-show-obs-marbles>
   </div>
 </div>
