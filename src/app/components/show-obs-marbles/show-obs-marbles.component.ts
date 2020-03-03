@@ -1,4 +1,4 @@
-import { switchMap, tap, takeUntil, catchError } from 'rxjs/operators';
+import { tap, takeUntil, catchError } from 'rxjs/operators';
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Observable, Subscription, interval, EMPTY, Subject } from 'rxjs';
 
