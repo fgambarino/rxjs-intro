@@ -12,12 +12,12 @@ span {
   text-align: center;
   font-size: $font-size;
   position: absolute;
-  //   z-index: 1;
 }
 
 .marble:hover {
   z-index: 1;
-  border: 3px black;
+  border: solid 1px black;
+  transform: scale(1.5);
 }
 
 .array-div {
