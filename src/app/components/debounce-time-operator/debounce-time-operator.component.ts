@@ -26,6 +26,6 @@ export class DebounceTimeOperatorComponent implements OnInit {
       map(i => interval(i * 500).pipe(delay(i * 500), take(4))),
       exhaust()
     );
-    this.newObservable$ = this.sourceObservable$.pipe(debounceTime(400));
+    this.newObservable$ = this.sourceObservable$.pipe(debounceTime(450));
   }
 }
