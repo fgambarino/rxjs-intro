@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, interval, fromEvent } from 'rxjs';
-import { debounceTime, map, tap } from 'rxjs/operators';
+import { Observable, interval, of } from 'rxjs';
+import {
+  debounceTime,
+  take,
+  delay,
+  concatAll,
+  map,
+  exhaust
+} from 'rxjs/operators';
 
 @Component({
   selector: 'app-debounce-time-operator',
@@ -14,12 +21,11 @@ export class DebounceTimeOperatorComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.sourceObservable$ = fromEvent(document, 'click').pipe(
-      map(() => 'click!')
+    this.sourceObservable$ = interval(600).pipe(
+      take(3),
+      map(i => interval(i * 600).pipe(delay(i * 400), take(3))),
+      concatAll()
     );
-    this.newObservable$ = this.sourceObservable$.pipe(
-      debounceTime(500),
-      map(() => 'click debounced!')
-    );
+    this.newObservable$ = this.sourceObservable$.pipe(debounceTime(800));
   }
 }

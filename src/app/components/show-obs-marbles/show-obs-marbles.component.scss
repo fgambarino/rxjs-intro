@@ -1,0 +1,25 @@
+$font-size: 20px;
+
+span {
+  font-size: $font-size;
+}
+
+.marble {
+  border-radius: 30px;
+  display: inline-block;
+  color: white;
+  width: 30px;
+  text-align: center;
+  font-size: $font-size;
+  position: absolute;
+}
+
+.marble:hover {
+  z-index: 1;
+  border: solid 1px black;
+  transform: scale(1.5);
+}
+
+.array-div {
+  top: 60px;
+}

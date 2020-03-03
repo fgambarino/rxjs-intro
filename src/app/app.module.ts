@@ -23,6 +23,7 @@ import { ForkJoinOperatorComponent } from './components/fork-join-operator/fork-
 import { HomeComponent } from './components/home/home.component';
 import { CatchErrorOperatorComponent } from './components/catch-error-operator/catch-error-operator.component';
 import { TapOperatorComponent } from './components/tap-operator/tap-operator.component';
+import { ShowObsMarblesComponent } from './components/show-obs-marbles/show-obs-marbles.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { TapOperatorComponent } from './components/tap-operator/tap-operator.com
     ForkJoinOperatorComponent,
     HomeComponent,
     CatchErrorOperatorComponent,
-    TapOperatorComponent
+    TapOperatorComponent,
+    ShowObsMarblesComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

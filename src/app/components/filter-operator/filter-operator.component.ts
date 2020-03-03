@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { filter } from 'rxjs/operators';
+import { filter, take } from 'rxjs/operators';
 import { Observable, interval } from 'rxjs';
 
 @Component({
@@ -14,7 +14,7 @@ export class FilterOperatorComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.sourceObservable$ = interval(2000);
+    this.sourceObservable$ = interval(2000).pipe(take(6));
     this.newObservable$ = this.sourceObservable$.pipe(filter(i => i % 2 > 0));
   }
 }

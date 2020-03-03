@@ -1,18 +1,21 @@
 <h1>CatchError and Error Management</h1>
+
 <div class="row">
   <div class="col">
-    <app-show-observable
-      title="Source observable"
+    <app-show-obs-marbles
+      title="Source observable throws after 3rd value"
       color="red"
       [observableInput]="sourceObservable$"
-    ></app-show-observable>
+    ></app-show-obs-marbles>
   </div>
+</div>
+<div class="row">
   <div class="col">
-    <app-show-observable
-      title="New Observable"
+    <app-show-obs-marbles
+      title="Observable with catchError that return new Observable when catches"
       color="green"
       [observableInput]="newObservable$"
-    ></app-show-observable>
+    ></app-show-obs-marbles>
   </div>
 </div>
 <div class="row">

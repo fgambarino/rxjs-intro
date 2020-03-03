@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, interval } from 'rxjs';
-import { delay } from 'rxjs/operators';
+import { delay, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-delay-operator',
@@ -14,7 +14,7 @@ export class DelayOperatorComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.sourceObservable$ = interval(2000);
+    this.sourceObservable$ = interval(2000).pipe(take(6));
     this.newObservable$ = this.sourceObservable$.pipe(delay(1000));
   }
 }

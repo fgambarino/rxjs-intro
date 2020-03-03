@@ -1,0 +1,31 @@
+<div>
+  <h2 [style.color]="color">{{ title }}</h2>
+  <br /><br />
+  <p *ngIf="!events.length; else eventsTemplate">Waiting for first value</p>
+  <ng-template #eventsTemplate>
+    <ng-container *ngFor="let i of events"
+      ><ng-container *ngIf="i === waitingContent; else content"
+        ><span>--</span></ng-container
+      ><ng-template #content
+        ><div
+          class="marble"
+          [style.backgroundColor]="color ? color : 'black'"
+          *ngIf="!IsArray(i)"
+        >
+          {{ i }}
+        </div>
+        <ng-container *ngIf="IsArray(i)">
+          <div
+            class="marble"
+            [style.backgroundColor]="color ? color : 'black'"
+            [ngClass]="{ 'array-div': IsArray(i) }"
+          >
+            <p *ngFor="let nestedItem of i">{{ nestedItem }}</p>
+          </div></ng-container
+        ></ng-template
+      ></ng-container
+    >
+    <span *ngIf="completed">------| Completed</span>
+    <span *ngIf="error">------X Error</span>
+  </ng-template>
+</div>

@@ -1,24 +1,28 @@
 <h1>SwitchMap</h1>
 <div class="row">
   <div class="col">
-    <app-show-observable
-      title="Observable"
-      color="red"
-      [observableInput]="sourceObservable$"
-    ></app-show-observable>
-  </div>
-  <div class="col">
-    <app-show-observable
+    <app-show-obs-marbles
       title="Inner Observable"
       color="green"
       [observableInput]="sourceObservable2$"
-    ></app-show-observable>
+    ></app-show-obs-marbles>
   </div>
+</div>
+<div class="row">
   <div class="col">
-    <app-show-observable
-      title="New Observable"
+    <app-show-obs-marbles
+      title="Outer Observable"
+      color="red"
+      [observableInput]="sourceObservable$"
+    ></app-show-obs-marbles>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <app-show-obs-marbles
+      title="SwitchMap Observable (outer value + inner value)"
       color="blue"
       [observableInput]="newObservable$"
-    ></app-show-observable>
+    ></app-show-obs-marbles>
   </div>
 </div>

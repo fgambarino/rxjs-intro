@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, interval } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { tap, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-tap-operator',
@@ -15,6 +15,7 @@ export class TapOperatorComponent implements OnInit {
 
   ngOnInit() {
     this.sourceObservable$ = interval(2000).pipe(
+      take(5),
       tap(i => (this.currentValue = i))
     );
   }

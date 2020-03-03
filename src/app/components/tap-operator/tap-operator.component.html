@@ -1,12 +1,14 @@
 <h1>Tap</h1>
 <div class="row">
   <div class="col">
-    <app-show-observable
+    <app-show-obs-marbles
       title="Source observable"
       color="red"
       [observableInput]="sourceObservable$"
-    ></app-show-observable>
+    ></app-show-obs-marbles>
   </div>
+</div>
+<div class="row">
   <div class="col">
     <h3>Current Value, assigned with Tap operator: [ {{ currentValue }} ]</h3>
   </div>
