@@ -15,11 +15,11 @@ export class MergeMapOperatorComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.sourceObservable$ = interval(1500).pipe(
+    this.sourceObservable$ = interval(1400).pipe(
       take(3),
       map(i => i + 10)
     );
-    this.sourceObservable2$ = interval(2000).pipe(
+    this.sourceObservable2$ = interval(1800).pipe(
       take(3),
       map(i => i + 1)
     );

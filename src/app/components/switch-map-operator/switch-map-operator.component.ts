@@ -15,11 +15,11 @@ export class SwitchMapOperatorComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.sourceObservable$ = interval(1500).pipe(
+    this.sourceObservable$ = interval(1400).pipe(
       take(4),
       map(i => i + 10)
     );
-    this.sourceObservable2$ = interval(500).pipe(take(5));
+    this.sourceObservable2$ = interval(600).pipe(take(5));
     this.newObservable$ = this.sourceObservable$.pipe(
       switchMap(outer =>
         this.sourceObservable2$.pipe(map(inner => outer + inner))

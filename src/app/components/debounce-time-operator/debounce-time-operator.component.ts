@@ -21,11 +21,11 @@ export class DebounceTimeOperatorComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.sourceObservable$ = interval(1000).pipe(
+    this.sourceObservable$ = interval(600).pipe(
       take(3),
-      map(i => interval(i * 500).pipe(delay(i * 500), take(4))),
-      exhaust()
+      map(i => interval(i * 600).pipe(delay(i * 400), take(3))),
+      concatAll()
     );
-    this.newObservable$ = this.sourceObservable$.pipe(debounceTime(450));
+    this.newObservable$ = this.sourceObservable$.pipe(debounceTime(800));
   }
 }
