@@ -24,6 +24,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CatchErrorOperatorComponent } from './components/catch-error-operator/catch-error-operator.component';
 import { TapOperatorComponent } from './components/tap-operator/tap-operator.component';
 import { ShowObsMarblesComponent } from './components/show-obs-marbles/show-obs-marbles.component';
+import { ConcatmapObservableComponent } from './components/concat-map-observable/concat-map-observable.component';
 
 @NgModule({
   declarations: [
@@ -48,10 +49,11 @@ import { ShowObsMarblesComponent } from './components/show-obs-marbles/show-obs-
     HomeComponent,
     CatchErrorOperatorComponent,
     TapOperatorComponent,
-    ShowObsMarblesComponent
+    ShowObsMarblesComponent,
+    ConcatmapObservableComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

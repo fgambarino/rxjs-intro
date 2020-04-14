@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-observable-operators',
   templateUrl: './observable-operators.component.html',
-  styleUrls: ['./observable-operators.component.scss']
+  styleUrls: ['./observable-operators.component.scss'],
 })
 export class ObservableOperatorsComponent implements OnInit {
   operatorPages = [
@@ -17,11 +17,12 @@ export class ObservableOperatorsComponent implements OnInit {
     { url: 'first-operator', name: 'First operator️' },
     { url: 'switch-map-operator', name: 'SwitchMap operator' },
     { url: 'merge-map-operator', name: 'MergeMap operator' },
+    { url: 'concat-map-operator', name: 'ConcatMap operator' },
     { url: 'combine-latest-operator', name: 'CombineLatest operator' },
     { url: 'zip-operator', name: 'Zip operator' },
     { url: 'race-operator', name: 'Race operator' },
     { url: 'fork-join-operator', name: 'ForkJoin operator' },
-    { url: 'catch-error-operator', name: 'CatchError operator' }
+    { url: 'catch-error-operator', name: 'CatchError operator' },
   ];
 
   constructor() {}

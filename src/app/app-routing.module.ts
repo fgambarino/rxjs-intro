@@ -1,3 +1,4 @@
+import { ConcatmapObservableComponent } from './components/concat-map-observable/concat-map-observable.component';
 import { TapOperatorComponent } from './components/tap-operator/tap-operator.component';
 import { CatchErrorOperatorComponent } from './components/catch-error-operator/catch-error-operator.component';
 import { HomeComponent } from './components/home/home.component';
@@ -35,28 +36,29 @@ const routes: Routes = [
       { path: 'delay-operator', component: DelayOperatorComponent },
       {
         path: 'debounce-time-operator',
-        component: DebounceTimeOperatorComponent
+        component: DebounceTimeOperatorComponent,
       },
       { path: 'switch-map-operator', component: SwitchMapOperatorComponent },
       { path: 'merge-map-operator', component: MergeMapOperatorComponent },
+      { path: 'concat-map-operator', component: ConcatmapObservableComponent },
       { path: 'take-operator', component: TakeOperatorComponent },
       { path: 'skip-operator', component: SkipOperatorComponent },
       {
         path: 'combine-latest-operator',
-        component: CombineLatestOperatorComponent
+        component: CombineLatestOperatorComponent,
       },
       { path: 'zip-operator', component: ZipOperatorComponent },
       { path: 'race-operator', component: RaceOperatorComponent },
       { path: 'fork-join-operator', component: ForkJoinOperatorComponent },
       { path: 'filter-operator', component: FilterOperatorComponent },
       { path: 'first-operator', component: FirstOperatorComponent },
-      { path: 'catch-error-operator', component: CatchErrorOperatorComponent }
-    ]
-  }
+      { path: 'catch-error-operator', component: CatchErrorOperatorComponent },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
