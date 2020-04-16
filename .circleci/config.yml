@@ -7,6 +7,9 @@ jobs:
       name: node/default
     steps:
       - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - '88:cf:0d:96:39:cc:84:fe:8a:82:7b:e1:25:67:1b:47'
       - node/with-cache:
           steps:
             - run: npm install
