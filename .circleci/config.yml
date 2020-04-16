@@ -18,9 +18,10 @@ jobs:
             - run: npm run deploy-gh
 workflows:
   build-and-deploy:
-    jobs:
+    triggers:
       filters:
         branches:
           only:
-            - develop
+            - master
+    jobs:
       - build-and-deploy
