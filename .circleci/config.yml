@@ -13,6 +13,8 @@ jobs:
       - node/with-cache:
           steps:
             - run: npm install
+            - run: git config --global user.email circleci@circleci
+            - run: git config --global user.name CircleCI
             - run: npm run deploy-gh
 workflows:
   build-and-deploy:
