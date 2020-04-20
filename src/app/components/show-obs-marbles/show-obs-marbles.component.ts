@@ -5,7 +5,7 @@ import { Observable, Subscription, interval, EMPTY, Subject } from 'rxjs';
 @Component({
   selector: 'app-show-obs-marbles',
   templateUrl: './show-obs-marbles.component.html',
-  styleUrls: ['./show-obs-marbles.component.scss']
+  styleUrls: ['./show-obs-marbles.component.scss'],
 })
 export class ShowObsMarblesComponent implements OnInit, OnDestroy {
   events: any[] = [];
@@ -29,7 +29,7 @@ export class ShowObsMarblesComponent implements OnInit, OnDestroy {
           complete: () => {
             this.completed = true;
             this.completeSubject.next();
-          }
+          },
         })
       );
       this.subscription.add(

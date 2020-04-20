@@ -1,3 +1,4 @@
+import { ExhaustMapOperatorComponent } from './components/exhaust-map-operator/exhaust-map-operator.component';
 import { ConcatmapObservableComponent } from './components/concat-map-observable/concat-map-observable.component';
 import { TapOperatorComponent } from './components/tap-operator/tap-operator.component';
 import { CatchErrorOperatorComponent } from './components/catch-error-operator/catch-error-operator.component';
@@ -41,6 +42,7 @@ const routes: Routes = [
       { path: 'switch-map-operator', component: SwitchMapOperatorComponent },
       { path: 'merge-map-operator', component: MergeMapOperatorComponent },
       { path: 'concat-map-operator', component: ConcatmapObservableComponent },
+      { path: 'exhaust-map-operator', component: ExhaustMapOperatorComponent },
       { path: 'take-operator', component: TakeOperatorComponent },
       { path: 'skip-operator', component: SkipOperatorComponent },
       {

@@ -5,7 +5,7 @@
   <ng-template #eventsTemplate>
     <ng-container *ngFor="let i of events"
       ><ng-container *ngIf="i === waitingContent; else content"
-        ><span>--</span></ng-container
+        ><span>&mdash;</span></ng-container
       ><ng-template #content
         ><div
           class="marble"
@@ -25,7 +25,7 @@
         ></ng-template
       ></ng-container
     >
-    <span *ngIf="completed">------| Completed</span>
-    <span *ngIf="error">------X Error</span>
+    <span *ngIf="completed">&mdash;&mdash;| <strong>Completed</strong></span>
+    <span *ngIf="error">&mdash;&mdash;X <strong>Error</strong></span>
   </ng-template>
 </div>
