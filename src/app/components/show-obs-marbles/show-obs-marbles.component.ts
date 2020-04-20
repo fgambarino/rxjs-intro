@@ -1,4 +1,4 @@
-import { tap, takeUntil, catchError } from 'rxjs/operators';
+import { takeUntil, catchError } from 'rxjs/operators';
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Observable, Subscription, interval, EMPTY, Subject } from 'rxjs';
 
@@ -34,23 +34,19 @@ export class ShowObsMarblesComponent implements OnInit, OnDestroy {
       );
       this.subscription.add(
         interval(200)
-          .pipe(
-            takeUntil(this.completeSubject),
-            tap(() => this.events.push(this.waitingContent))
-          )
-          .subscribe()
+          .pipe(takeUntil(this.completeSubject))
+          .subscribe(() => this.events.push(this.waitingContent))
       );
       this.subscription.add(
         this.observableInput
           .pipe(
-            tap((x: any) => this.events.push(x)),
             catchError(() => {
               this.error = true;
               this.completeSubject.next();
               return EMPTY;
             })
           )
-          .subscribe()
+          .subscribe((x: any) => this.events.push(x))
       );
     }
   }

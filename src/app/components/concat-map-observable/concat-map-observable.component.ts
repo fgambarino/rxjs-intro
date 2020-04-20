@@ -16,7 +16,7 @@ export class ConcatmapObservableComponent implements OnInit {
 
   ngOnInit() {
     this.sourceObservable$ = interval(1400).pipe(
-      take(3),
+      take(2),
       map((i) => i + 10)
     );
     this.sourceObservable2$ = interval(1800).pipe(

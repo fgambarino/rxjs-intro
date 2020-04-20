@@ -1,7 +1,5 @@
-$font-size: 20px;
-
 span {
-  font-size: calc($font-size/2);
+  font-size: 18px;
 }
 
 .marble {
@@ -10,7 +8,7 @@ span {
   color: white;
   width: 30px;
   text-align: center;
-  font-size: $font-size;
+  font-size: 20px;
   position: absolute;
 }
 
