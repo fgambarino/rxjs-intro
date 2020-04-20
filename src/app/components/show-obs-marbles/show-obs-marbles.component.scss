@@ -1,7 +1,7 @@
 $font-size: 20px;
 
 span {
-  font-size: $font-size;
+  font-size: calc($font-size/2);
 }
 
 .marble {
@@ -21,5 +21,5 @@ span {
 }
 
 .array-div {
-  top: 60px;
+  top: 75px;
 }

@@ -25,6 +25,7 @@ import { CatchErrorOperatorComponent } from './components/catch-error-operator/c
 import { TapOperatorComponent } from './components/tap-operator/tap-operator.component';
 import { ShowObsMarblesComponent } from './components/show-obs-marbles/show-obs-marbles.component';
 import { ConcatmapObservableComponent } from './components/concat-map-observable/concat-map-observable.component';
+import { ExhaustMapOperatorComponent } from './components/exhaust-map-operator/exhaust-map-operator.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { ConcatmapObservableComponent } from './components/concat-map-observable
     TapOperatorComponent,
     ShowObsMarblesComponent,
     ConcatmapObservableComponent,
+    ExhaustMapOperatorComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

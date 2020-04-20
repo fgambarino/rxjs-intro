@@ -18,6 +18,7 @@ export class ObservableOperatorsComponent implements OnInit {
     { url: 'switch-map-operator', name: 'SwitchMap operator' },
     { url: 'merge-map-operator', name: 'MergeMap operator' },
     { url: 'concat-map-operator', name: 'ConcatMap operator' },
+    { url: 'exhaust-map-operator', name: 'ExhaustMap operator' },
     { url: 'combine-latest-operator', name: 'CombineLatest operator' },
     { url: 'zip-operator', name: 'Zip operator' },
     { url: 'race-operator', name: 'Race operator' },

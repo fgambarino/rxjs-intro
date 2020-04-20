@@ -1,0 +1,28 @@
+<h1>ExhaustMap</h1>
+<div class="row">
+  <div class="col">
+    <app-show-obs-marbles
+      title="Inner Observable"
+      color="green"
+      [observableInput]="sourceObservable2$"
+    ></app-show-obs-marbles>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <app-show-obs-marbles
+      title="Outer Observable"
+      color="red"
+      [observableInput]="sourceObservable$"
+    ></app-show-obs-marbles>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <app-show-obs-marbles
+      title="ExhaustMap Observable (outer value * inner value)"
+      color="blue"
+      [observableInput]="newObservable$"
+    ></app-show-obs-marbles>
+  </div>
+</div>
