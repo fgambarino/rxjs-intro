@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-create-observable',
   templateUrl: './create-observable.component.html',
-  styleUrls: ['./create-observable.component.scss']
+  styleUrls: ['./create-observable.component.scss'],
 })
 export class CreateObservableComponent implements OnInit {
   ofObservable$: Observable<any>;
@@ -18,21 +18,22 @@ export class CreateObservableComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.ofObservable$ = of(1, 2, 3, 4, [1, 2, 3], `Hey mom, look I'm on TV`).pipe(
-      delay(2000)
-    );
+    this.ofObservable$ = of(
+      1,
+      2,
+      3,
+      4,
+      [1, 2, 3],
+      `Hey mom, look I'm on TV`
+    ).pipe(delay(2000));
 
     this.clickObservable$ = fromEvent(document, 'click').pipe(
-      map(click => JSON.stringify(click))
+      map((click) => JSON.stringify(click))
     );
 
-    this.httpObservable$ = this.http.get('https://swapi.co/api/').pipe(
-      map(response =>
-        JSON.stringify(response)
-          .split(',')
-          .join(', ')
-      )
-    );
+    this.httpObservable$ = this.http
+      .get('assets/http-response.json')
+      .pipe(map((response) => JSON.stringify(response).split(',').join(', ')));
 
     this.intervalObservable$ = interval(3000);
 
