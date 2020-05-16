@@ -1,0 +1,6 @@
+{
+	"result": {
+		"message": "http call success",
+		"details": "you received the json from assets folder"
+	}
+}
