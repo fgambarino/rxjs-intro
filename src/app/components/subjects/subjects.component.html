@@ -1,88 +1,154 @@
-<h1>Subjects</h1>
+<div class="row">
+  <div class="col text-center mb-5"><h2>Subjects</h2></div>
+</div>
 <div class="row">
   <div class="col">
-    <button (click)="nextOn(subject, 0)">Next</button>
-    <button (click)="completeOn(subject)">Complete</button>
+    <h4>Subject</h4>
+    <button type="button" (click)="nextOn(subject, 0)" class="btn btn-primary">
+      Next
+    </button>
+    <button type="button" (click)="completeOn(subject)" class="btn btn-success">
+      Complete
+    </button>
     <p *ngIf="lastGeneratedValues[0]">
       value created: {{ lastGeneratedValues[0] }}
     </p>
     <app-show-observable
-      title="Subject"
+      title="Subject subscription"
       color="red"
       [observableInput]="subject?.asObservable()"
     ></app-show-observable>
-    <button (click)="createNewSubscription(0)">
+    <button
+      type="button"
+      (click)="createNewSubscription(0)"
+      class="btn btn-outline-primary"
+      *ngIf="!newSubscription[0]"
+    >
       Create new subscription
     </button>
     <app-show-observable
       *ngIf="newSubscription[0]"
-      title="Subject"
+      title="Subject subscription 2"
       color="red"
       [observableInput]="subject?.asObservable()"
     ></app-show-observable>
   </div>
 
   <div class="col">
-    <button (click)="nextOn(behaviorSubject, 1)">Next</button>
-    <button (click)="completeOn(behaviorSubject)">Complete</button>
+    <h4>Behavior Subject</h4>
+    <button
+      type="button"
+      (click)="nextOn(behaviorSubject, 1)"
+      class="btn btn-primary"
+    >
+      Next
+    </button>
+    <button
+      type="button"
+      (click)="completeOn(behaviorSubject)"
+      class="btn btn-success"
+    >
+      Complete
+    </button>
     <p *ngIf="lastGeneratedValues[1]">
       value created: {{ lastGeneratedValues[1] }}
     </p>
     <app-show-observable
-      title="Behavior Subject"
+      title="Behavior Subject subscription"
       color="green"
       [observableInput]="behaviorSubject?.asObservable()"
     ></app-show-observable>
-    <button (click)="createNewSubscription(1)">
+    <button
+      type="button"
+      (click)="createNewSubscription(1)"
+      class="btn btn-outline-primary"
+      *ngIf="!newSubscription[1]"
+    >
       Create new subscription
     </button>
     <app-show-observable
       *ngIf="newSubscription[1]"
-      title="Behavior Subject"
+      title="Behavior Subject subscription 2"
       color="green"
       [observableInput]="behaviorSubject?.asObservable()"
     ></app-show-observable>
   </div>
 
   <div class="col">
-    <button (click)="nextOn(replaySubject, 2)">Next</button>
-    <button (click)="completeOn(replaySubject)">Complete</button>
+    <h4>Replay Subject</h4>
+    <button
+      type="button"
+      (click)="nextOn(replaySubject, 2)"
+      class="btn btn-primary"
+    >
+      Next
+    </button>
+    <button
+      type="button"
+      (click)="completeOn(replaySubject)"
+      class="btn btn-success"
+    >
+      Complete
+    </button>
     <p *ngIf="lastGeneratedValues[2]">
       value created: {{ lastGeneratedValues[2] }}
     </p>
     <app-show-observable
-      title="Replay Subject"
+      title="Replay Subject subscription"
       color="blue"
       [observableInput]="replaySubject?.asObservable()"
     ></app-show-observable>
-    <button (click)="createNewSubscription(2)">
+    <button
+      type="button"
+      (click)="createNewSubscription(2)"
+      class="btn btn-outline-primary"
+      *ngIf="!newSubscription[2]"
+    >
       Create new subscription
     </button>
     <app-show-observable
       *ngIf="newSubscription[2]"
-      title="Replay Subject"
+      title="Replay Subject subscription 2"
       color="blue"
       [observableInput]="replaySubject?.asObservable()"
     ></app-show-observable>
   </div>
 
   <div class="col">
-    <button (click)="nextOn(asyncSubject, 3)">Next</button>
-    <button (click)="completeOn(asyncSubject)">Complete</button>
+    <h4>Async Subject</h4>
+    <button
+      type="button"
+      (click)="nextOn(asyncSubject, 3)"
+      class="btn btn-primary"
+    >
+      Next
+    </button>
+    <button
+      type="button"
+      (click)="completeOn(asyncSubject)"
+      class="btn btn-success"
+    >
+      Complete
+    </button>
     <p *ngIf="lastGeneratedValues[3]">
       value created: {{ lastGeneratedValues[3] }}
     </p>
     <app-show-observable
-      title="Async Subject"
+      title="Async Subject subscription"
       color="orange"
       [observableInput]="asyncSubject?.asObservable()"
     ></app-show-observable>
-    <button (click)="createNewSubscription(3)">
+    <button
+      type="button"
+      (click)="createNewSubscription(3)"
+      class="btn btn-outline-primary"
+      *ngIf="!newSubscription[3]"
+    >
       Create new subscription
     </button>
     <app-show-observable
       *ngIf="newSubscription[3]"
-      title="Async Subject"
+      title="Async Subject subscription 2"
       color="orange"
       [observableInput]="asyncSubject?.asObservable()"
     ></app-show-observable>

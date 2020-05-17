@@ -1,5 +1,5 @@
-<div [style.color]="color">
-  <h2>{{ title }}</h2>
+<div [style.color]="color" class="py-4">
+  <h6>{{ title }}</h6>
   <p *ngIf="!events.length; else eventsTemplate">Waiting for first value</p>
   <ng-template #eventsTemplate>
     <ul>
@@ -7,5 +7,5 @@
     </ul></ng-template
   >
 
-  <h4 *ngIf="completed">Observable Completed!</h4>
+  <strong *ngIf="completed">Observable Completed!</strong>
 </div>
