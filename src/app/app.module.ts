@@ -26,6 +26,11 @@ import { TapOperatorComponent } from './components/tap-operator/tap-operator.com
 import { ShowObsMarblesComponent } from './components/show-obs-marbles/show-obs-marbles.component';
 import { ConcatmapObservableComponent } from './components/concat-map-observable/concat-map-observable.component';
 import { ExhaustMapOperatorComponent } from './components/exhaust-map-operator/exhaust-map-operator.component';
+import {
+  NgbModule,
+  NgbNavModule,
+  NgbNavItem,
+} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -54,8 +59,14 @@ import { ExhaustMapOperatorComponent } from './components/exhaust-map-operator/e
     ConcatmapObservableComponent,
     ExhaustMapOperatorComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    NgbModule,
+    NgbNavModule,
+  ],
+  providers: [NgbNavItem],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

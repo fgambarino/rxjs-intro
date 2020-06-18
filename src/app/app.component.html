@@ -1,28 +1,13 @@
 <div class="container-fluid">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" (click)="goToHomePage()" id="title">{{ title }}</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li
-          class="nav-item"
-          *ngFor="let route of routes"
-          routerLinkActive="active"
-        >
-          <a class="nav-link" [routerLink]="route.url">{{ route.name }} </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <ul ngbNav class="nav-tabs">
+    <li>
+      <a class="navbar-brand" (click)="goToHomePage()" id="title"
+        ><h3>{{ title }}</h3></a
+      >
+    </li>
+    <li *ngFor="let route of routes">
+      <a ngbNavLink [routerLink]="route.url">{{ route.name }}</a>
+    </li>
+  </ul>
   <router-outlet></router-outlet>
 </div>
